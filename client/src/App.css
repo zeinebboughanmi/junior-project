@@ -1,0 +1,263 @@
+.container {
+  padding: 50px;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-img-top {
+  height: 350px;
+  object-fit: cover;
+}
+
+.btn-danger {
+  background-color: #b64f65;
+  border-color: #b35468;
+}
+
+.btn-primary {
+  background-color: #6b8cce;
+  border-color: #5f6ec0;
+}
+
+.row{
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+
+}
+
+
+
+
+.add-product-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 50px;
+  border: 10px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-product-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.add-product-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.add-product-container form div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.add-product-container label {
+  font-weight: bold;
+  color: #555;
+}
+
+.add-product-container input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.add-product-container input:focus {
+  border-color: #9ca1a6;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.add-product-container button {
+  padding: 10px 15px;
+  background-color: #636465;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-product-container button:hover {
+  background-color: #494b4e;
+}
+
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  margin: 0;
+  padding: 100;
+}
+
+.nav-item {
+  display: inline;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 10px 50px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #555;
+}
+
+.container {
+  padding: 20px;
+}
+
+
+
+
+
+.footer {
+  background-color: #393739;
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-top: 2rem;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.social-links {
+  margin-top: 1rem;
+}
+
+.social-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 0.75rem;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #6200ea; 
+}
+
+
+
+
+
+
+
+.search-bar {
+  flex-grow: 1;
+  margin: 0 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.auth-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.auth-form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.auth-form button:hover {
+  background-color: #555;
+}
+
+.auth-form p {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.auth-form p button {
+  background: none;
+  border: none;
+  color: #333;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.auth-form p button:hover {
+  color: #555;
+}
