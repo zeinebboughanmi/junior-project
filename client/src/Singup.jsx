@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const Signup = ({ changeView }) => {
   const [credentials, setCredentials] = useState({
@@ -12,14 +13,39 @@ const Signup = ({ changeView }) => {
     setCredentials({ ...credentials, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (credentials.password !== credentials.confirmPassword) {
       alert("Passwords do not match");
       return;
     }
-    
-    changeView("login");
+
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:3001/api/user/add",
+        {
+          Email: credentials.email,
+          Password: credentials.password,
+        }
+      );
+      if (response.status === 200 || response.status === 201) {
+        console.log("User registered successfully:", response.data);
+        alert("Registration successful!");
+        changeView("login"); 
+      }
+    } catch (error) {
+      
+      if (error.response) {
+        console.error("Registration failed:", error.response.data);
+        alert(`Registration failed: ${error.response.data.message || "Unknown error"}`);
+      } else if (error.request) {
+        console.error("No response received:", error.request);
+        alert("No response from the server. Please try again.");
+      } else {
+        console.error("Error during registration:", error.message);
+        alert("An error occurred during registration. Please try again.");
+      }
+    }
   };
 
   return (

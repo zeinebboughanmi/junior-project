@@ -24,22 +24,25 @@ testconnection()
 db.admin=require('../database/Models/admin.model.js')(Connection,DataTypes)
 db.categorie=require('../database/Models/categorie.model.js')(Connection,DataTypes)
 db.Product=require('../database/Models/product.model.js')(Connection,DataTypes)
+db.user=require('../database/Models/users.model.js')(Connection,DataTypes)
 db.admin.hasMany(db.Product)
 db.Product.belongsTo(db.admin)
 db.categorie.hasMany(db.Product)
 db.Product.belongsTo(db.categorie)
+db.user.hasMany(db.categorie)
+db.user.belongsTo(db.user)
 
 
 
 
-// Connection
-//   .sync({ alter: true })
-//   .then(() => {
-//     console.log("tables are created inside datbase");
-//   })
-//   .catch((err) => {
-//     throw err;
-//   });
+Connection
+  .sync({ force: false })
+  .then(() => {
+    console.log("tables are created inside datbase");
+  })
+  .catch((err) => {
+    throw err;
+  });
 
 
 

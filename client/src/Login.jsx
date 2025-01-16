@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const Login = ({ changeView, handleLogin }) => {
   const [credentials, setCredentials] = useState({
@@ -11,10 +12,23 @@ const Login = ({ changeView, handleLogin }) => {
     setCredentials({ ...credentials, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    handleLogin();
+
+    try {
+      const response = await axios.post("http://127.0.0.1:3001/api/user/login", {
+        Email: credentials.email,
+        Password: credentials.password,
+      });
+
+      const userData = response.data;
+
+      handleLogin(userData);
+
+      console.log("Login successful:", userData);
+    } catch (error) {
+      console.error("Login failed:", error.response ? error.response.data : error.message);
+    }
   };
 
   return (
